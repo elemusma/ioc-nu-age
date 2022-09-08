@@ -1,0 +1,43 @@
+.owl-theme .owl-nav [class*="owl-"]:hover {
+  background: transparent !important;
+}
+
+.owl-theme .owl-nav [class*="owl-"]:hover {
+  color: #eaeaea !important;
+}
+
+button.owl-next,
+button.owl-prev {
+  outline: none !important;
+}
+
+@media screen and (min-width: 992px) {
+
+  button.owl-next,
+  button.owl-prev {
+    position: absolute;
+    top: 50%;
+  }
+
+  button.owl-prev {
+    left: -5%;
+    transform: translate(0, -50%);
+  }
+
+  button.owl-next {
+    right: -5%;
+    transform: translate(0, -50%);
+  }
+}
+
+.owl-prev span,
+.owl-next span {
+  font-size: 4rem;
+}
+
+/* for background galleries */
+.position-absolute .owl-stage-outer,
+.position-absolute .owl-stage,
+.position-absolute .owl-item {
+  height: 100%;
+}

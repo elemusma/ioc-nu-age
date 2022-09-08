@@ -1,0 +1,16 @@
+.btn-read-less,
+.btn-read-more.inactive {
+  opacity: 0;
+  pointer-events: none;
+}
+.btn-read-less.active,
+.btn-read-more.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.dropdown-arrow svg {
+  transition: all 0.25s ease-in-out;
+}
+.dropdown-arrow.active svg {
+  transform: rotate(90deg) !important;
+}

@@ -1,0 +1,24 @@
+@media screen and (min-width:992px) {
+    .hero-content {
+        width: 50%;
+        margin-left: auto;
+    }
+}
+
+.col-services-link {
+    transition: all .25s ease-in-out;
+}
+
+.col-services:hover .col-services-link {
+    opacity: 1 !important;
+    pointer-events: all !important;
+    background: var(--accent-primary);
+}
+
+.col-technology img {
+    transition: all .25s ease-in-out;
+}
+
+.col-technology:hover img {
+    transform: scale(1.2);
+}
