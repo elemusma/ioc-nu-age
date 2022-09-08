@@ -73,7 +73,7 @@ endwhile; endif;
 // start of values
 $valuesBgImg = get_field('values_background_image');
 
-echo '<div class="pt-5 pb-5"></div>';
+echo '<div class="pt-md-5 pb-md-5"></div>';
 
 echo wp_get_attachment_image($valuesBgImg['id'],'full','',['class'=>'w-100 h-auto','data-aos'=>'zoom-in']);
 
@@ -208,13 +208,130 @@ echo '</section>';
 endwhile; endif;
 // end of architects
 
+// // start of technology partners
+// if(have_rows('technology_content')): while(have_rows('technology_content')): the_row();
+// $gallery = get_sub_field('gallery');
+
+// echo '<section class="pt-5 pb-5 position-relative">';
+// echo '<div class="container">';
+// echo '<div class="row justify-content-center">';
+// echo '<div class="col-md-7 text-center">';
+
+// echo get_sub_field('content');
+
+// echo '</div>';
+// echo '</div>';
+
+// if( $gallery ): 
+// echo '<div class="technology-carousel owl-carousel owl-theme">';
+// // echo '<div class="row justify-content-center">';
+// foreach( $gallery as $image ):
+// echo '<div class="col-lg-3 col-6 text-center mt-5 mb-5 col-technology">';
+// // echo '<div class="position-relative">';
+// // echo '<a href="' . wp_get_attachment_image_url($image['id'], 'full') . '" data-lightbox="image-set">';
+// echo wp_get_attachment_image($image['id'], 'full','',['class'=>'m-auto img-portfolio','style'=>'height:75px;width:175px;object-fit:contain;filter:grayscale(1);'] );
+// // echo '</a>';
+// // echo '</div>';
+// echo '</div>';
+// endforeach; 
+// echo '</div>';
+// endif;
+
+// echo '</div>';
+// echo '</section>';
+// endwhile; endif;
+// // end of technology partners
+
+?>
+
+<style>
+    .carousel {
+  position: relative;
+  /* width: 50%; */
+  height: 50px; 
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.carousel-content {
+  position: relative;
+  overflow: hidden;
+  transition: width .4s;
+  height: 100%;
+}
+
+.slide {
+  height: 100%;
+  /* background-color: black; */
+  position: absolute;
+  z-index: 1;
+  transition: left .4s cubic-bezier(.47,.13,.15,.89);
+}
+
+/* .slide-2 {
+  background-color: green;
+}
+
+.slide-3 {
+  background-color: red;
+}
+
+.slide-4 {
+  background-color: purple;
+}
+
+.slide-5 {
+  background-color: yellow;
+} */
+
+.carousel .nav {
+  position: absolute;
+  top: 20%;
+  margin-top: -10px;
+  background-color: rgba(150,150,150,.3);
+  background-color: var(--accent-secondary);
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  color: white;
+  -webkit-user-select: none;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-left {
+  left: -25px;
+}
+
+.nav-right {
+  right: -25px;
+}
+
+.carousel-arrow-icon-left {
+  margin-left: 5px;
+  margin-top: 2px;
+}
+
+.carousel-arrow-icon-right {
+  margin-left: 7px;
+  margin-top: 2px;
+}
+</style>
+
+<?php
+
 // start of technology partners
 if(have_rows('technology_content')): while(have_rows('technology_content')): the_row();
 $gallery = get_sub_field('gallery');
 
 echo '<section class="pt-5 pb-5 position-relative">';
 echo '<div class="container">';
-echo '<div class="row justify-content-center">';
+echo '<div class="row justify-content-center pb-5">';
 echo '<div class="col-md-7 text-center">';
 
 echo get_sub_field('content');
@@ -223,24 +340,262 @@ echo '</div>';
 echo '</div>';
 
 if( $gallery ): 
-echo '<div class="technology-carousel owl-carousel owl-theme">';
-// echo '<div class="row justify-content-center">';
+echo '<div class="carousel">';
+
+echo '<div class="carousel-content">';
+
 foreach( $gallery as $image ):
-echo '<div class="col-lg-3 col-6 text-center mt-5 mb-5 col-technology">';
-// echo '<div class="position-relative">';
-// echo '<a href="' . wp_get_attachment_image_url($image['id'], 'full') . '" data-lightbox="image-set">';
-echo wp_get_attachment_image($image['id'], 'full','',['class'=>'m-auto img-portfolio','style'=>'height:75px;width:175px;object-fit:contain;filter:grayscale(1);'] );
-// echo '</a>';
-// echo '</div>';
+// echo '<div class="text-center mt-5 mb-5 col-technology">';
+
+
+echo '<div class="slide slide-1">';
+echo wp_get_attachment_image($image['id'], 'full','',['class'=>'m-auto img-portfolio','style'=>'height:50px;width:160px;object-fit:contain;filter:grayscale(1);'] );
 echo '</div>';
+
+// echo '</div>';
 endforeach; 
+echo '</div>';
+
+echo '<div class="d-md-block d-flex justify-content-center">';
+
+// echo '<div class="pt-md-0 pt-5"></div>';
+
+echo '<div class="nav nav-left">';
+echo '<svg style="width:15px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"/></svg>';
+echo '</div>';
+echo '<div class="nav nav-right">';
+echo '<svg style="width:15px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg>';
+echo '</div>';
+echo '</div>';
+
 echo '</div>';
 endif;
 
 echo '</div>';
+
+echo '<div class="pb-md-0 pb-5"></div>';
+
 echo '</section>';
 endwhile; endif;
 // end of technology partners
+
+?>
+
+
+
+<!-- <div class="container">
+
+<div class="carousel">
+      <div class="nav nav-left">
+        <div class="ion-chevron-left carousel-arrow-icon-left"></div>
+      </div>
+
+        <div class="carousel-content">
+          
+          <div class="slide slide-1">
+            <div>cat</div>
+          </div>
+          <div class="slide slide-2">
+            <div>dog</div>
+          </div>
+          <div class="slide slide-3">
+            <div>mouse</div>
+          </div>
+          <div class="slide slide-4">
+            <div>hen</div>
+          </div>
+          <div class="slide slide-5">
+            <div>bug</div>
+          </div>
+        
+        </div>
+
+      <div class="nav nav-right">
+        <div class="ion-chevron-right carousel-arrow-icon-right"></div>
+      </div>
+    </div>
+    
+</div> -->
+
+<script>
+    var carousel = document.querySelector('.carousel');
+var carouselContent = document.querySelector('.carousel-content');
+var slides = document.querySelectorAll('.slide');
+var arrayOfSlides = Array.prototype.slice.call(slides);
+var carouselDisplaying;
+var screenSize;
+setScreenSize();
+var lengthOfSlide;
+
+function addClone() {
+   var lastSlide = carouselContent.lastElementChild.cloneNode(true);
+   lastSlide.style.left = (-lengthOfSlide) + "px";
+   carouselContent.insertBefore(lastSlide, carouselContent.firstChild);
+}
+// addClone();
+
+function removeClone() {
+  var firstSlide = carouselContent.firstElementChild;
+  firstSlide.parentNode.removeChild(firstSlide);
+}
+
+function moveSlidesRight() {
+  var slides = document.querySelectorAll('.slide');
+  var slidesArray = Array.prototype.slice.call(slides);
+  var width = 0;
+
+  slidesArray.forEach(function(el, i){
+    el.style.left = width + "px";
+    width += lengthOfSlide;
+  });
+  addClone();
+}
+moveSlidesRight();
+
+function moveSlidesLeft() {
+  var slides = document.querySelectorAll('.slide');
+  var slidesArray = Array.prototype.slice.call(slides);
+  slidesArray = slidesArray.reverse();
+  var maxWidth = (slidesArray.length - 1) * lengthOfSlide;
+
+  slidesArray.forEach(function(el, i){
+    maxWidth -= lengthOfSlide;
+    el.style.left = maxWidth + "px";
+  });
+}
+
+window.addEventListener('resize', setScreenSize);
+
+function setScreenSize() {
+  if ( window.innerWidth >= 992 ) {
+    carouselDisplaying = 5;
+  } else if ( window.innerWidth >= 767 ) {
+    carouselDisplaying = 3;
+  } else {
+    carouselDisplaying = 2;
+  }
+  getScreenSize();
+}
+
+function getScreenSize() {
+  var slides = document.querySelectorAll('.slide');
+  var slidesArray = Array.prototype.slice.call(slides);
+  lengthOfSlide = ( carousel.offsetWidth  / carouselDisplaying );
+  var initialWidth = -lengthOfSlide;
+  slidesArray.forEach(function(el) {
+    el.style.width = lengthOfSlide + "px";
+    el.style.left = initialWidth + "px";
+    initialWidth += lengthOfSlide;
+  });
+}
+
+
+var rightNav = document.querySelector('.nav-right');
+rightNav.addEventListener('click', moveLeft);
+
+var moving = true;
+function moveRight() {
+  if ( moving ) {
+    moving = false;
+    var lastSlide = carouselContent.lastElementChild;
+    lastSlide.parentNode.removeChild(lastSlide);
+    carouselContent.insertBefore(lastSlide, carouselContent.firstChild);
+    removeClone();
+    var firstSlide = carouselContent.firstElementChild;
+    firstSlide.addEventListener('transitionend', activateAgain);
+    moveSlidesRight();
+  }
+}
+
+function activateAgain() {
+  var firstSlide = carouselContent.firstElementChild;
+  moving = true;
+  firstSlide.removeEventListener('transitionend', activateAgain);
+}
+
+var leftNav = document.querySelector('.nav-left');
+leftNav.addEventListener('click', moveRight);
+
+// var moveLeftAgain = true;
+
+function moveLeft() {
+  if ( moving ) {
+    moving = false;
+    removeClone();
+    var firstSlide = carouselContent.firstElementChild;
+    firstSlide.addEventListener('transitionend', replaceToEnd);
+    moveSlidesLeft();
+  }
+}
+
+function replaceToEnd() {
+  var firstSlide = carouselContent.firstElementChild;
+  firstSlide.parentNode.removeChild(firstSlide);
+  carouselContent.appendChild(firstSlide);
+  firstSlide.style.left = ( (arrayOfSlides.length -1) * lengthOfSlide) + "px";
+  addClone();
+  moving = true;
+  firstSlide.removeEventListener('transitionend', replaceToEnd);
+}
+
+
+
+
+carouselContent.addEventListener('mousedown', seeMovement);
+
+var initialX;
+var initialPos;
+function seeMovement(e) {
+  initialX = e.clientX;
+  getInitialPos();
+  carouselContent.addEventListener('mousemove', slightMove);
+  document.addEventListener('mouseup', moveBasedOnMouse);
+}
+
+function slightMove(e) {
+  if ( moving ) {
+    var movingX = e.clientX;
+    var difference = initialX - movingX;
+    if ( Math.abs(difference) < (lengthOfSlide/4) ) {
+      slightMoveSlides(difference);
+    }  
+  }
+}
+
+function getInitialPos() {
+  var slides = document.querySelectorAll('.slide');
+  var slidesArray = Array.prototype.slice.call(slides);
+  initialPos = [];
+  slidesArray.forEach(function(el){
+    var left = Math.floor( parseInt( el.style.left.slice(0, -2 ) ) ); 
+    initialPos.push( left );
+  });
+}
+
+function slightMoveSlides(newX) {
+  var slides = document.querySelectorAll('.slide');
+  var slidesArray = Array.prototype.slice.call(slides);
+  slidesArray.forEach(function(el, i){
+    var oldLeft = initialPos[i];
+    el.style.left = (oldLeft + newX) + "px";
+  });
+}
+
+function moveBasedOnMouse(e) { 
+  var finalX = e.clientX;
+  if ( initialX - finalX > 0) {
+    moveRight();
+  } else if ( initialX - finalX < 0 ) {
+    moveLeft();
+  }
+  document.removeEventListener('mouseup', moveBasedOnMouse);
+  carouselContent.removeEventListener('mousemove', slightMove);
+}
+</script>
+
+
+
+<?php
 
 // start of architects
 if(have_rows('unique_content')): while(have_rows('unique_content')): the_row();

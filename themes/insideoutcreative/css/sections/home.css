@@ -1,3 +1,28 @@
+/* start of carousel */
+.carousel .nav svg path {
+    /* fill: var(--accent-primary); */
+    fill: white;
+}
+
+@media only screen and (max-width:767px) {
+    .img-portfolio {
+        width: 125px !important;
+    }
+
+    .carousel {
+        width: 90%;
+        padding: 0 !important;
+        height: 80px !important;
+    }
+
+    .carousel .nav {
+        position: relative !important;
+        top: 0 !important;
+        margin-top: 0 !important;
+    }
+}
+
+/* end of carousel */
 @media screen and (min-width:992px) {
     .hero-content {
         width: 50%;

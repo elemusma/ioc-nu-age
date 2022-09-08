@@ -136,10 +136,10 @@ background: linear-gradient(90deg, rgba(0,0,0,0) 70%, rgba(255,255,255,0.6) 85%,
 echo '</div>';
 // the_post_thumbnail('full', array('class' => 'w-100 h-100 bg-img position-absolute'));
 // echo '</div>';
-} else {
+} elseif($globalPlaceholderImg) {
 echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-100 h-100 bg-img position-absolute']);
 }
-} else {
+} elseif($globalPlaceholderImg) {
 echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-100 h-100 bg-img position-absolute']);
 }
 

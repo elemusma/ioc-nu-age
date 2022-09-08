@@ -9,7 +9,7 @@ echo '<div class="row justify-content-center pb-5">';
 foreach( $galleryFooter as $image ):
 echo '<div class="col-lg-3 col-4 text-center">';
 
-echo wp_get_attachment_image($image['id'], 'full','',['class'=>'w-100 img-portfolio','style'=>'height:65px;object-fit:contain;'] );
+echo wp_get_attachment_image($image['id'], 'full','',['class'=>'w-100 img-portfolio pr-md-0 pr-4','style'=>'height:65px;object-fit:contain;'] );
 
 echo '</div>';
 endforeach; 
@@ -42,10 +42,6 @@ echo '</div>';
 <div class="text-gray-1">
 <?php the_field('website_message','options'); ?>
 	
-	<a href="https://insideoutcreative.io/" target="_blank" rel="noopener noreferrer" style="opacity:.25;" class="">
-        <?php echo wp_get_attachment_image(151,'large','',['class'=>'h-auto ml-2','style'=>'width:105px;']); ?>
-        </a>
-	
 </div>
 </div>
 </div>
@@ -53,13 +49,7 @@ echo '</div>';
     </div>
 </section>
 
-<!-- <div class="text-center pt-3 pb-3 pl-5 pr-5" style="background:#f2f2f2;">
-    <div class="d-flex justify-content-center align-items-center">
-        <a href="https://insideoutcreative.io/" target="_blank" rel="noopener noreferrer" style="" class="">
-        <?php echo wp_get_attachment_image(95,'large','',['class'=>'h-auto ml-2','style'=>'width:215px;']); ?>
-        </a>
-    </div>
-</div> -->
+
 </footer>
 <?php if(get_field('footer', 'options')) { the_field('footer', 'options'); } ?>
 <?php wp_footer(); ?>
