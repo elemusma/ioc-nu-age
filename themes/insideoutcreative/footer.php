@@ -12,7 +12,7 @@ echo '<div class="col-lg-3 col-4 text-center">';
 echo wp_get_attachment_image($image['id'], 'full','',['class'=>'w-100 img-portfolio pr-md-0 pr-4','style'=>'height:65px;object-fit:contain;'] );
 
 echo '</div>';
-endforeach; 
+endforeach;
 echo '</div>';
 endif;
 

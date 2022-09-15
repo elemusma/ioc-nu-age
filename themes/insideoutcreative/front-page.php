@@ -340,7 +340,7 @@ echo '</div>';
 echo '</div>';
 
 if( $gallery ): 
-echo '<div class="carousel">';
+echo '<div class="carousel custom-carousel">';
 
 echo '<div class="carousel-content">';
 
@@ -360,10 +360,10 @@ echo '<div class="d-md-block d-flex justify-content-center">';
 
 // echo '<div class="pt-md-0 pt-5"></div>';
 
-echo '<div class="nav nav-left">';
+echo '<div class="nav nav-left" id="navLefttArrow" style="opacity:0;">';
 echo '<svg style="width:15px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"/></svg>';
 echo '</div>';
-echo '<div class="nav nav-right">';
+echo '<div class="nav nav-right" id="navRightArrow" style="opacity:0;">';
 echo '<svg style="width:15px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg>';
 echo '</div>';
 echo '</div>';
@@ -380,42 +380,6 @@ endwhile; endif;
 // end of technology partners
 
 ?>
-
-
-
-<!-- <div class="container">
-
-<div class="carousel">
-      <div class="nav nav-left">
-        <div class="ion-chevron-left carousel-arrow-icon-left"></div>
-      </div>
-
-        <div class="carousel-content">
-          
-          <div class="slide slide-1">
-            <div>cat</div>
-          </div>
-          <div class="slide slide-2">
-            <div>dog</div>
-          </div>
-          <div class="slide slide-3">
-            <div>mouse</div>
-          </div>
-          <div class="slide slide-4">
-            <div>hen</div>
-          </div>
-          <div class="slide slide-5">
-            <div>bug</div>
-          </div>
-        
-        </div>
-
-      <div class="nav nav-right">
-        <div class="ion-chevron-right carousel-arrow-icon-right"></div>
-      </div>
-    </div>
-    
-</div> -->
 
 <script>
     var carousel = document.querySelector('.carousel');
@@ -591,6 +555,39 @@ function moveBasedOnMouse(e) {
   document.removeEventListener('mouseup', moveBasedOnMouse);
   carouselContent.removeEventListener('mousemove', slightMove);
 }
+
+let customCarousel = document.querySelector('.custom-carousel');
+let navLeftArrow = document.querySelector('#navLeftArrow');
+let navRightArrow = document.querySelector('#navRightArrow');
+// let scrollCarouselVar = 'yes';
+
+
+
+function scrollCarousel() {
+  // if(cancel == 'yes'){
+    // if(scrollCarouselVar = 'yes' ){
+      setInterval(function(){ 
+        navRightArrow.click();
+      }, 2500);
+    // }
+  // }
+}
+
+// if(scrollCarouselVar = 'yes' ){
+  scrollCarousel();
+// }
+
+customCarousel.addEventListener('mouseenter',function(){
+  // delete window.scrollCarousel();
+  // alert('hello');
+  // scrollCarousel(cancel);
+  // let scrollCarouselVar = 'no';
+  navRightArrow.setAttribute('id','null');
+  // delete.navRightArrow();
+  // console.log(scrollCarouselVar);
+})
+
+
 </script>
 
 
