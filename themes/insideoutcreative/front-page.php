@@ -577,15 +577,15 @@ function scrollCarousel() {
   scrollCarousel();
 // }
 
-customCarousel.addEventListener('mouseenter',function(){
+// customCarousel.addEventListener('mouseenter',function(){
   // delete window.scrollCarousel();
   // alert('hello');
   // scrollCarousel(cancel);
   // let scrollCarouselVar = 'no';
-  navRightArrow.setAttribute('id','null');
+  // navRightArrow.setAttribute('id','null');
   // delete.navRightArrow();
   // console.log(scrollCarouselVar);
-})
+// })
 
 
 </script>
